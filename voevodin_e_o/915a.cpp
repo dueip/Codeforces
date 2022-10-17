@@ -4,8 +4,12 @@
 
 int main()
 {
-	int n, k, ans=101, p;
+	int n;
+	int k;
+	int ans = 101;
+	int p = 0;
 	std::cin >> n;
+	std::com >> k;
 	for (int i = 0; i < n; i += 1) 
 	{
 		std::cin >> p;
