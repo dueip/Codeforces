@@ -1,0 +1,30 @@
+    #include <iostream>
+    #include <limits>
+    namespace at {
+    	
+    	long long max(long long first, long long second) {
+    		if (first > second) {
+    			return first;
+    		}
+    		return second;
+    	}
+    }
+     
+    int main() {
+    	
+    	size_t number_of_rest = {};
+    	size_t time = {};
+    	std::cin >> number_of_rest >> time;
+    	
+    	long long max_pleasure = std::numeric_limits<long long>::lowest();
+    	for (int i = 0; i < number_of_rest; ++i) {	
+    		size_t f = {};
+    		size_t t = {};
+    		ptrdiff_t pleasure = {};
+    		std::cin >> f >> t;
+    		(t > time) ? (pleasure = f - (t - time)) : (pleasure = f);
+    		max_pleasure = at::max(pleasure, max_pleasure);
+    		
+    	}
+    	std::cout << max_pleasure;
+    }
