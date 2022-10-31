@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-int count_0(std::string l) {
+int count_0(const std::string& l) {
 	int counter_0 = 0;
 	for (int i = 0; i < l.length(); i += 1) {
 		if (l[i] == '0') {
@@ -10,7 +10,7 @@ int count_0(std::string l) {
 	return counter_0;
 }
  
-int count_1(std::string l) {
+int count_1(const std::string& l) {
 	int counter_1 = 0;
 	for (int i = 0; i < l.length(); i += 1) {
 		if (l[i] == '1') {
