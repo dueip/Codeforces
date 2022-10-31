@@ -1,0 +1,14 @@
+    #include <iostream>
+     
+    int main() {
+    	size_t num = 0;
+    	std::cin >> num;
+    	size_t counter = 0;
+    	while (num) {
+    		if (num & 1) {
+    			++counter;
+    		}
+    		num >>= 1;
+    	}
+    	std::cout << counter;
+    }
