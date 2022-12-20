@@ -11,35 +11,20 @@ int main() {
 	std::cin >> first_word;
 	std::cout << "2nd word: ";
 	std::cin >> second_word;
-	if (first_word.size() < second_word.size()) {
-		std::string c = first_word;
-		first_word = second_word;
-		second_word = c;
-	}
 
-	// Что-то я сглупил надо было с конца идти да...
  
 	size_t substr_count = 0;
-	for (size_t i = 0; i < first_word.size(); ++i) {
-		for (size_t j = i; j < second_word.size(); ++j) {
-			if (first_word[i] == second_word[j]) {
-				if (first_word_sub == std::string::npos && second_word_sub == std::string::npos || first_word_sub < second_word_sub) {
-					substr_count += 1;
-					first_word_sub = i;
-					second_word_sub = j;
-				}
-				break;
-			}
-			else {
-				first_word_sub = std::string::npos;
-				second_word_sub = std::string::npos;
-			}
+	for (std::pair<long long, long long> i = { first_word.size() - 1,second_word.size() - 1}; (i.first >= 0 && i.second >= 0); --i.first, --i.second) {
+		if (first_word[i.first] != second_word[i.second]) {
+			first_word_sub = i.first;
+			second_word_sub = i.second;
+			break;
 		}
 
 	}
 
 	if (first_word_sub != std::string::npos) {
-		std::cout << first_word_sub + second_word_sub;
+		std::cout << (first_word_sub + 1) + (second_word_sub + 1);
 	}
 	else {
 		std::cout << "0";
