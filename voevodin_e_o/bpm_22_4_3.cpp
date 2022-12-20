@@ -17,7 +17,7 @@ int main() {
 		second_word = c;
 	}
 
-	// �� �������� :(
+	// Что-то я сглупил надо было с конца идти да...
  
 	size_t substr_count = 0;
 	for (size_t i = 0; i < first_word.size(); ++i) {
