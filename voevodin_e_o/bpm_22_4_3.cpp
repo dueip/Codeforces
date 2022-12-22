@@ -5,8 +5,8 @@
 int main() {
 	std::string first_word;
 	std::string second_word;
-	size_t first_word_sub = std::string::npos;
-	size_t second_word_sub = std::string::npos;
+	size_t first_word_sub = 0;
+	size_t second_word_sub = 0;
 	std::cout << "1st word: ";
 	std::cin >> first_word;
 	std::cout << "2nd word: ";
@@ -23,11 +23,6 @@ int main() {
 
 	}
 
-	if (first_word_sub != std::string::npos) {
-		std::cout << (first_word_sub + 1) + (second_word_sub + 1);
-	}
-	else {
-		std::cout << "0";
-	}
+	std::cout << first_word.size() + second_word.size() - ((first_word_sub ) + (second_word_sub));
 
 }
